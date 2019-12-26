@@ -8,8 +8,12 @@ const forecast = (lat, long, callback ) => {
         } else if(body.error) {
             callback('Unable to find the location ', undefined);
         } else {
+            console.log(body.daily.data[0]);
             callback(
-                undefined, body.daily.data[1].summary+' and ' + body.currently.temperature + ' degree fahrenheit ' + body.currently.precipProbability + ' chance of precipitation.'
+                undefined,
+                body.daily.data[1].summary+' Current temperature is ' + body.currently.temperature + ' degree fahrenheit and there is a ' + body.currently.precipProbability + '/1 chance of precipitation.' +
+                '. The highest temperature today is ' + body.daily.data[0].temperatureHigh  + ' degree Fahrenheit and the lowest temperature today is '  +  body.daily.data[0].temperatureHigh + ' degree Fahrenheit.' 
+
             )
         }
     })
