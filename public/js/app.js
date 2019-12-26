@@ -1,4 +1,4 @@
-console.log('Print kara de na kuchh bhi....');
+// console.log('Print kara de na kuchh bhi....');
 
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
